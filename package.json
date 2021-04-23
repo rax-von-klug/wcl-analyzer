@@ -1,0 +1,27 @@
+{
+  "name": "wcl-analyzer",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server/index.js",
+    "client": "cd client && npm run start",
+    "build:client": "cd client && npm run build",
+    "insall:all": "npm i && cd client && npm i",
+    "start:both": "npm run server & npm run client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rax-von-klug/wcl-analyzer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rax-von-klug/wcl-analyzer/issues"
+  },
+  "homepage": "https://github.com/rax-von-klug/wcl-analyzer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
