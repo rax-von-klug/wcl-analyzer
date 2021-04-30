@@ -1,42 +1,23 @@
-import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { Flex, ChakraProvider } from '@chakra-ui/react';
+import * as React from 'react';
+import theme from './theme';
+import { Logo } from './components/core/Logo';
+import { PageContent } from './components/core/PageContent';
 
-function App() {
+const App = () => {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <Flex direction="column" height="100vh">
+        <Flex align="center" bg="#222431" borderBottom="1px solid #36384a" color="white" px="6" minH="16">
+          <Flex justify="space-between" align="center" w="full">
+            <Logo display={{ base: 'none', lg: 'block' }} flexShrink={0} h="5" marginEnd="10" />
+          </Flex>
+        </Flex>
+        { /* <PageHeader /> */ }
+        <PageContent />
+      </Flex>
     </ChakraProvider>
-  );
+  )
 }
 
 export default App;
